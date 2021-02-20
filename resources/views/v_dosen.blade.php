@@ -3,6 +3,13 @@
 @section('content')
 
 <h2 class="text-white">Dosen</h2>
+
+@if(session('pesan'))
+<div class="alert alert-success" role="alert">
+    {{session('pesan')}}
+</div>
+@endif
+<a href="/dosen/add" class="btn btn-primary">Tambah Data</a>
 <table class="table table-success table-striped">
     <thead>
         <tr>
@@ -19,7 +26,7 @@
             <?php $no = 1; ?>
             @foreach ($dosen as $data)
             <th scope="row">{{$no++}}</th>
-            <td><img src="{{asset('img')}}/profile.jpg" style="width:100px; border-radius:50%;" alt=""></td>
+            <td><img src="{{asset('img')}}/{{$data->foto}}" style="width:100px; border-radius:50%; height:100px;" alt=""></td>
             <td>{{$data->nidn}}</td>
             <td>{{$data->nama}}</td>
             <td>{{$data->mata_kuliah}}</td>

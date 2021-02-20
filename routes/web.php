@@ -17,5 +17,7 @@ use App\Http\Controllers\DosenController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/dosen', [DosenController::class, 'index']);
-Route::get('dosen/detail/{dosen_id}', [DosenController::class, 'detail']);
+Route::get('/dosen', [DosenController::class, 'index'])->name('dosen');
+Route::get('/dosen/detail/{dosen_id}', [DosenController::class, 'detail']);
+Route::get('/dosen/add', [DosenController::class, 'add']);
+Route::post('/dosen/insert', [DosenController::class, 'insert']);

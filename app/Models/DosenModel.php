@@ -17,4 +17,9 @@ class DosenModel extends Model
     {
         return DB::table('dosen')->where('dosen_id', $dosen_id)->first();
     }
+
+    public function addDosen($data)
+    {
+        DB::table('dosen')->insert($data);
+    }
 }
