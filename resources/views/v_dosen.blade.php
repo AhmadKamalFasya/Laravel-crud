@@ -24,7 +24,8 @@
             <td>{{$data->nama}}</td>
             <td>{{$data->mata_kuliah}}</td>
             <td>
-                <a href="" class="badge badge-primary">Edit</a>
+                <a href="/dosen/detail/{{$data->dosen_id}}" class="badge badge-primary">Detail</a>
+                <a href="" class="badge badge-success">Edit</a>
                 <a href="" class="badge badge-danger">Hapus</a>
             </td>
         </tr>

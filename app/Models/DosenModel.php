@@ -12,4 +12,9 @@ class DosenModel extends Model
     {
         return $users = DB::table('dosen')->get();
     }
+
+    public function detailDosen($dosen_id)
+    {
+        return DB::table('dosen')->where('dosen_id', $dosen_id)->first();
+    }
 }

@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li class="nav-item {{request()->is('dosen') ? 'active' : ''}}">
-                <a class="nav-link" href="dosen">
+                <a class="nav-link" href="/dosen">
                     <i class="material-icons">person</i>
                     <p>Dosen</p>
                 </a>

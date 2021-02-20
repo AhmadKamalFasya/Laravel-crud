@@ -19,4 +19,16 @@ class DosenController extends Controller
 
         return view('v_dosen', $data);
     }
+
+    public function detail($dosen_id)
+    {
+        if (!$this->DosenModel->detailDosen($dosen_id)) {
+            abort(404);
+        }
+        $data = [
+            'dosen' => $this->DosenModel->detailDosen($dosen_id)
+        ];
+
+        return view('v_detaildosen', $data);
+    }
 }

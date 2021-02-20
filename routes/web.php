@@ -16,4 +16,6 @@ use App\Http\Controllers\DosenController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+
 Route::get('/dosen', [DosenController::class, 'index']);
+Route::get('dosen/detail/{dosen_id}', [DosenController::class, 'detail']);
