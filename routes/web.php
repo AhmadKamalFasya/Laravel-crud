@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('v_home');
 });
+
+Route::view('/dosen', 'v_dosen');
+Route::view('mahasiswa', 'v_mahasiswa');
