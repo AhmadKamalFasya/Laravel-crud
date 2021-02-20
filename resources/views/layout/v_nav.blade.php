@@ -11,21 +11,21 @@
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item active  ">
+            <li class="nav-item {{request()->is('/') ? 'active' : ''}} ">
                 <a class="nav-link" href="javascript:void(0)">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <!-- your sidebar here -->
-            <li class="nav-item ">
-                <a class="nav-link" href="./user.html">
+            <li class="nav-item {{request()->is('mahasiswa') ? 'active' : ''}}" href="mahasiswa">
+                <a class="nav-link">
                     <i class="material-icons">person</i>
                     <p>Mahasiswa</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./user.html">
+            <li class="nav-item {{request()->is('dosen') ? 'active' : ''}}">
+                <a class="nav-link" href="dosen">
                     <i class="material-icons">person</i>
                     <p>Dosen</p>
                 </a>
