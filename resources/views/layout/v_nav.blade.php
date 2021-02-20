@@ -12,14 +12,14 @@
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="nav-item {{request()->is('/') ? 'active' : ''}} ">
-                <a class="nav-link" href="javascript:void(0)">
+                <a class="nav-link" href="/">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <!-- your sidebar here -->
-            <li class="nav-item {{request()->is('mahasiswa') ? 'active' : ''}}" href="mahasiswa">
-                <a class="nav-link">
+            <li class="nav-item {{request()->is('mahasiswa') ? 'active' : ''}}">
+                <a class="nav-link" href="mahasiswa">
                     <i class="material-icons">person</i>
                     <p>Mahasiswa</p>
                 </a>

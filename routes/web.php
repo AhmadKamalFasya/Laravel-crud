@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('v_home');
-});
-
-Route::view('/dosen', 'v_dosen');
-Route::view('mahasiswa', 'v_mahasiswa');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/dosen', [DosenController::class, 'index']);
