@@ -21,3 +21,6 @@ Route::get('/dosen', [DosenController::class, 'index'])->name('dosen');
 Route::get('/dosen/detail/{dosen_id}', [DosenController::class, 'detail']);
 Route::get('/dosen/add', [DosenController::class, 'add']);
 Route::post('/dosen/insert', [DosenController::class, 'insert']);
+Route::get('/dosen/edit/{dosen_id}', [DosenController::class, 'edit']);
+Route::post('/dosen/update/{dosen_id}', [DosenController::class, 'update']);
+Route::get('/dosen/delete/{dosen_id}', [DosenController::class, 'delete']);

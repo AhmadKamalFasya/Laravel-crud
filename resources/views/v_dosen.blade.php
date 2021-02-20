@@ -32,11 +32,32 @@
             <td>{{$data->mata_kuliah}}</td>
             <td>
                 <a href="/dosen/detail/{{$data->dosen_id}}" class="badge badge-primary">Detail</a>
-                <a href="" class="badge badge-success">Edit</a>
-                <a href="" class="badge badge-danger">Hapus</a>
+                <a href="/dosen/edit/{{$data->dosen_id}}" class="badge badge-success">Edit</a>
+                <button type="button" class="badge badge-danger" data-toggle="modal" data-target=".delete{{$data->dosen_id}}" style="cursor: pointer;">Delete</button>
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
+
+<!-- Small modal / Modal kecil-->
+
+@foreach ($dosen as $data)
+<div class="modal fade delete{{$data->dosen_id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="text-center">Apakah anda yakin ingin menghapusnya ?</h5>
+            </div>
+            <div class="modal-body text-center">
+                <button type="button" class="btn btn-primary">Batal</button>
+                <a href="dosen/delete/{{ $data->dosen_id}}" type="button" class="btn btn-danger">Hapus</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+@endforeach
+
 @endSection
