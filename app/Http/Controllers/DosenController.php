@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DosenModel;
 
 class DosenController extends Controller
 {
+    public function __construct()
+    {
+        $this->DosenModel = new DosenModel();
+    }
     public function index()
     {
         $data = [
-            'nama_dosen' => 'Ashley Chamber',
-            'alamat'     => 'Green Canyon, No.23, Whinchester'
+            'dosen' => $this->DosenModel->allData(),
         ];
 
         return view('v_dosen', $data);
