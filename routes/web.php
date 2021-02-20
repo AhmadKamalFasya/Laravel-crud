@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\MahsiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,6 @@ Route::post('/dosen/insert', [DosenController::class, 'insert']);
 Route::get('/dosen/edit/{dosen_id}', [DosenController::class, 'edit']);
 Route::post('/dosen/update/{dosen_id}', [DosenController::class, 'update']);
 Route::get('/dosen/delete/{dosen_id}', [DosenController::class, 'delete']);
+
+//Mahasiswa
+Route::get('/mahasiswa', [MahsiswaController::class, 'index']);
