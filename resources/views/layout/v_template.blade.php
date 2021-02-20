@@ -16,7 +16,7 @@
 
 <body class="dark-edition">
     <div class="wrapper ">
-        <div class="sidebar" data-color="purple" data-background-color="black" data-image="./assets/img/sidebar-2.jpg">
+        <div class="sidebar" data-color="purple" data-background-color="black" data-image="{{asset('template')}}/assets/img/avatar.jpg">
             <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -36,37 +36,24 @@
                         </a>
                     </li>
                     <!-- your sidebar here -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./user.html">
+                            <i class="material-icons">person</i>
+                            <p>Mahasiswa</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./user.html">
+                            <i class="material-icons">person</i>
+                            <p>Dosen</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
         <div class="main-panel">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-                <div class="container-fluid">
-                    <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="navbar-toggler-icon icon-bar"></span>
-                        <span class="navbar-toggler-icon icon-bar"></span>
-                        <span class="navbar-toggler-icon icon-bar"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0)">
-                                    <i class="material-icons">notifications</i>
-                                    <p class="d-lg-none d-md-block">
-                                        Notifications
-                                    </p>
-                                </a>
-                            </li>
-                            <!-- your navbar here -->
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            @include('layout.v_nav');
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
@@ -97,23 +84,23 @@
         </div>
     </div>
     <!--   Core JS Files   -->
-    <script src="./assets/js/core/jquery.min.js"></script>
-    <script src="./assets/js/core/popper.min.js"></script>
-    <script src="./assets/js/core/bootstrap-material-design.min.js"></script>
+    <script src="{{asset('template')}}/assets/js/core/jquery.min.js"></script>
+    <script src="{{asset('template')}}/assets/js/core/popper.min.js"></script>
+    <script src="{{asset('template')}}/assets/js/core/bootstrap-material-design.min.js"></script>
     <script src="https://unpkg.com/default-passive-events"></script>
-    <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="{{asset('template')}}/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!--  Google Maps Plugin    -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <!-- Chartist JS -->
-    <script src="./assets/js/plugins/chartist.min.js"></script>
+    <script src="{{asset('template')}}/assets/js/plugins/chartist.min.js"></script>
     <!--  Notifications Plugin    -->
-    <script src="./assets/js/plugins/bootstrap-notify.js"></script>
+    <script src="{{asset('template')}}/assets/js/plugins/bootstrap-notify.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="./assets/js/material-dashboard.js?v=2.1.0"></script>
+    <script src="{{asset('template')}}/assets/js/material-dashboard.js?v=2.1.0"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-    <script src="./assets/demo/demo.js"></script>
+    <script src="{{asset('template')}}/assets/demo/demo.js"></script>
     <script>
         $(document).ready(function() {
             $().ready(function() {
