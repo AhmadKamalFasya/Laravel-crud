@@ -32,7 +32,7 @@
                                         <td>{{$data->prodi}}</td>
                                         <td>{{$data->mata_kuliah}}</td>
                                         <td>
-                                            <a href="" class="badge badge-primary">Detail</a>
+                                            <a href="/mahasiswa/detail/{{$data->mahasiswa_id}}" class="badge badge-primary">Detail</a>
                                             <a href="" class="badge badge-success">Edit</a>
                                             <a href="" class="badge badge-danger">Delete</a>
                                         </td>
