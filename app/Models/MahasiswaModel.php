@@ -16,4 +16,9 @@ class MahasiswaModel extends Model
             ->leftJoin('matakuliah', 'matakuliah.matakuliah_id', '=', 'mahasiswa.matakuliah_id')
             ->get();
     }
+
+    public function detailMahasiswa($mahasiswa_id)
+    {
+        return DB::table('mahasiswa')->where('mahasiswa_id', $mahasiswa_id)->first();
+    }
 }
