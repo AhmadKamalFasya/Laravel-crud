@@ -31,4 +31,9 @@ class MahasiswaController extends Controller
         ];
         return view('v_detailmahasiswa', $data);
     }
+
+    public function add()
+    {
+        return view('v_addmahasiswa');
+    }
 }

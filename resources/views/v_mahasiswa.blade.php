@@ -12,6 +12,7 @@
                         <p class="card-category"> List Data mahasiswa</p>
                     </div>
                     <div class="card-body">
+                        <a href="/mahasiswa/add" class="btn btn-primary">Tambah Data</a>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
