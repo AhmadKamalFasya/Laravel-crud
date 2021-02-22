@@ -36,4 +36,36 @@ class MahasiswaController extends Controller
     {
         return view('v_addmahasiswa');
     }
+
+    public function insert()
+    {
+        Request()->validate(
+            [
+                'nim'           => 'required|unique:mahasiswa|min:9|max:9',
+                'nama'          => 'required',
+                'prodi_id'      => 'required',
+                'matakuliah_id' => 'required'
+            ],
+            [
+                'nim.required' => 'NIM harus diisi.',
+                'nim_unique'   => 'NIM telah terdaftar',
+                'nim.min' => 'NIM yang anda masukan kurang dari 6 karakter',
+                'nim.max' => 'NIM yang anda masukan lebih dari 6 karakter',
+                'nama.required' => 'Nama harus diisi.',
+                'prodi_id' => 'Prodi ID harus diisi.',
+                'matakuliah_id.required' => 'Matakuliah ID harus diisi.'
+            ]
+        );
+
+        $data = [
+            'nim' => Request()->nim,
+            'nama' => Request()->nama,
+            'prodi_id' => Request()->prodi_id,
+            'matakuliah_id' => Request()->matakuliah_id
+        ];
+
+        $this->MahasiswaModel->addMahasiswa($data);
+
+        return redirect()->route('mahasiswa')->with('pesan', 'Data berhasil ditambahkan');
+    }
 }

@@ -13,6 +13,11 @@
                     </div>
                     <div class="card-body">
                         <a href="/mahasiswa/add" class="btn btn-primary">Tambah Data</a>
+                        @if(session('pesan'))
+                        <div class="alert alert-success" role="alert">
+                            {{session('pesan')}}
+                        </div>
+                        @endif
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">

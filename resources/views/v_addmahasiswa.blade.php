@@ -35,7 +35,7 @@
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">Matakuliah</label>
-            <input class="form-control @error('matakuliah_id') is-invalid @enderror" type="file" name="matakuliah_id" value="{{ old('matakuliah_id')}}" id="formFile">
+            <input class="form-control @error('matakuliah_id') is-invalid @enderror" type="text" name="matakuliah_id" value="{{ old('matakuliah_id')}}" id="formFile">
             <div class="invalid-feedback">
                 @error('matakuliah_id')
                 <div class="alert alert-danger">{{$message}}</div>
