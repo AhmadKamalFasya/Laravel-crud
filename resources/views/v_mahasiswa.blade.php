@@ -33,7 +33,7 @@
                                         <td>{{$data->mata_kuliah}}</td>
                                         <td>
                                             <a href="/mahasiswa/detail/{{$data->mahasiswa_id}}" class="badge badge-primary">Detail</a>
-                                            <a href="" class="badge badge-success">Edit</a>
+                                            <a href="/mahasiswa/edit/{{$data->mahasiswa_id}}" class="badge badge-success">Edit</a>
                                             <a href="" class="badge badge-danger">Delete</a>
                                         </td>
                                     </tr>
