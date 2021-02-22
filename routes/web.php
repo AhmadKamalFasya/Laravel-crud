@@ -30,5 +30,5 @@ Route::get('/dosen/delete/{dosen_id}', [DosenController::class, 'delete']);
 //Mahasiswa
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 Route::get('/mahasiswa/detail/{mahasiswa_id}', [MahasiswaController::class, 'detail']);
-Route::get('/mahasiswa/add', [MahasiswaController::class, 'add']);
-Route::get('/mahasiswa/edit/{mahasiswa_id}', [MahasiswaController::class, 'edit']);
+Route::get('/mahasiswa/add', [DosenController::class, 'add']);
+Route::post('/mahasiswa/insert', [MahasiswaController::class, 'insert']);

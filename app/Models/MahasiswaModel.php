@@ -21,4 +21,9 @@ class MahasiswaModel extends Model
     {
         return DB::table('mahasiswa')->where('mahasiswa_id', $mahasiswa_id)->first();
     }
+
+    public function addMahasiswa($data)
+    {
+        DB::table('mahasiswa')->insert($data);
+    }
 }

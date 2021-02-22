@@ -4,13 +4,13 @@
 @section('content')
 
 <div class="container">
-    <form action="/dosen/insert" method="POST" enctype="multipart/form-data">
+    <form action="/mahasiswa/insert" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="" class="form-label">NIDN</label>
-            <input type="text" name="nidn" class="form-control text-white @error('nidn') is-invalid @enderror" id="" aria-describedby="emailHelp" value="{{ old('nidn')}}" autofocus>
+            <label for="" class="form-label">NIM</label>
+            <input type="text" name="nim" class="form-control text-white @error('nim') is-invalid @enderror" id="" aria-describedby="emailHelp" value="{{ old('nim')}}" autofocus>
             <div class="invalid-feedback">
-                @error('nidn')
+                @error('nim')
                 <div class="alert alert-danger">{{$message}}</div>
                 @enderror
             </div>
@@ -25,19 +25,19 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="" class="form-label">Mata Kuliah</label>
-            <input type="text" name="mata_kuliah" class="form-control text-white @error('mata_kuliah') is-invalid @enderror" value="{{ old('mata_kuliah')}}" id="">
+            <label for="" class="form-label">Prodi</label>
+            <input type="text" name="prodi_id" class="form-control text-white @error('prodi_id') is-invalid @enderror" value="{{ old('prodi_id')}}" id="">
             <div class="invalid-feedback">
-                @error('mata_kuliah')
+                @error('prodi_id')
                 <div class="alert alert-danger">{{$message}}</div>
                 @enderror
             </div>
         </div>
         <div class="mb-3">
-            <label for="formFile" class="form-label">Foto</label>
-            <input class="form-control @error('foto') is-invalid @enderror" type="file" name="foto" value="{{ old('foto')}}" id="formFile">
+            <label for="formFile" class="form-label">Matakuliah</label>
+            <input class="form-control @error('matakuliah_id') is-invalid @enderror" type="file" name="matakuliah_id" value="{{ old('matakuliah_id')}}" id="formFile">
             <div class="invalid-feedback">
-                @error('foto')
+                @error('matakuliah_id')
                 <div class="alert alert-danger">{{$message}}</div>
                 @enderror
             </div>
