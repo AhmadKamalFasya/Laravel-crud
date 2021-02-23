@@ -68,4 +68,32 @@ class MahasiswaController extends Controller
 
         return redirect()->route('mahasiswa')->with('pesan', 'Data berhasil ditambahkan');
     }
+
+    public function edit($mahasiswa_id)
+    {
+        if (!$this->MahasiswaModel->detailMahasiswa($mahasiswa_id)) {
+            abort(404);
+        }
+
+        $data = [
+            'mahasiswa' => $this->MahasiswaModel->detailMahasiswa($mahasiswa_id)
+        ];
+        return view('v_editmahasiswa', $data);
+    }
+
+    public function update($mahasiswa_id)
+    {
+
+
+        $data = [
+            'nim' => Request()->nim,
+            'nama' => Request()->nama,
+            'prodi_id' => Request()->prodi_id,
+            'matakuliah_id' => Request()->matakuliah_id
+        ];
+
+        $this->MahasiswaModel->editMahasiswa($mahasiswa_id, $data);
+
+        return redirect()->route('mahasiswa')->with('pesan', 'Data berhasil diupdate');
+    }
 }

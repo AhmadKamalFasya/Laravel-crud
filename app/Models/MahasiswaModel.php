@@ -26,4 +26,9 @@ class MahasiswaModel extends Model
     {
         DB::table('mahasiswa')->insert($data);
     }
+
+    public function editMahasiswa($mahasiswa_id, $data)
+    {
+        return DB::table('mahasiswa')->where('mahasiswa_id', $mahasiswa_id)->update($data);
+    }
 }
