@@ -40,7 +40,7 @@
                                         <td>
                                             <a href="/mahasiswa/detail/{{$data->mahasiswa_id}}" class="badge badge-primary">Detail</a>
                                             <a href="/mahasiswa/edit/{{$data->mahasiswa_id}}" class="badge badge-success">Edit</a>
-                                            <a href="" class="badge badge-danger">Delete</a>
+                                            <button type="button" class="badge badge-danger" data-toggle="modal" data-target=".delete{{$data->mahasiswa_id}}" style="cursor: pointer;">Delete</button>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -53,5 +53,24 @@
         </div>
     </div>
 </div>
+
+
+@foreach ($mahasiswa as $data)
+<div class="modal fade delete{{$data->mahasiswa_id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="text-center">Apakah anda yakin ingin menghapusnya ?</h5>
+            </div>
+            <div class="modal-body text-center">
+                <button type="button" class="btn btn-primary">Batal</button>
+                <a href="mahasiswa/delete/{{ $data->mahasiswa_id}}" type="button" class="btn btn-danger">Hapus</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+@endforeach
 
 @endSection

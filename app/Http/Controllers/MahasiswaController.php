@@ -84,7 +84,6 @@ class MahasiswaController extends Controller
     public function update($mahasiswa_id)
     {
 
-
         $data = [
             'nim' => Request()->nim,
             'nama' => Request()->nama,
@@ -95,5 +94,11 @@ class MahasiswaController extends Controller
         $this->MahasiswaModel->editMahasiswa($mahasiswa_id, $data);
 
         return redirect()->route('mahasiswa')->with('pesan', 'Data berhasil diupdate');
+    }
+
+    public function delete($mahasiswa_id)
+    {
+        $this->MahasiswaModel->deleteMahasiswa($mahasiswa_id);
+        return redirect()->route('mahasiswa')->with('pesan', 'Data berhasil dihapus');
     }
 }

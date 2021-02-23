@@ -34,3 +34,4 @@ Route::get('/mahasiswa/add', [MahasiswaController::class, 'add']);
 Route::post('/mahasiswa/insert', [MahasiswaController::class, 'insert']);
 Route::get('/mahasiswa/edit/{mahasiswa_id}', [MahasiswaController::class, 'edit']);
 Route::post('/mahasiswa/update/{mahasiswa_id}', [MahasiswaController::class, 'update']);
+Route::get('mahasiswa/delete/{mahasiswa_id}', [MahasiswaController::class, 'delete']);

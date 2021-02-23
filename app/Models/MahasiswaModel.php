@@ -31,4 +31,9 @@ class MahasiswaModel extends Model
     {
         return DB::table('mahasiswa')->where('mahasiswa_id', $mahasiswa_id)->update($data);
     }
+
+    public function deleteMahasiswa($mahasiswa_id)
+    {
+        return DB::table('mahasiswa')->where('mahasiswa_id', $mahasiswa_id)->delete();
+    }
 }
