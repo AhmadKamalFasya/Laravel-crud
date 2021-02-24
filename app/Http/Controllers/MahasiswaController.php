@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DosenModel;
 use Illuminate\Http\Request;
 use App\Models\MahasiswaModel;
+use Dompdf\Dompdf;
 
 class MahasiswaController extends Controller
 {
@@ -100,5 +101,41 @@ class MahasiswaController extends Controller
     {
         $this->MahasiswaModel->deleteMahasiswa($mahasiswa_id);
         return redirect()->route('mahasiswa')->with('pesan', 'Data berhasil dihapus');
+    }
+
+    public function print()
+    {
+        $data = [
+            'mahasiswa' => $this->MahasiswaModel->allData(),
+        ];
+
+        return view('v_print', $data);
+    }
+
+
+    public function printpdf()
+    {
+
+        $data = [
+            'mahasiswa' => $this->MahasiswaModel->allData(),
+        ];
+
+        $html = view('v_printpdf', $data);
+
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation
+        $options = $dompdf->getOptions();
+        $options->setIsHtml5ParserEnabled(true);
+        $dompdf->setOptions($options);
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
     }
 }

@@ -13,6 +13,8 @@
                     </div>
                     <div class="card-body">
                         <a href="/mahasiswa/add" class="btn btn-primary">Tambah Data</a>
+                        <a href="/mahasiswa/print" class="btn btn-primary ml-3">Print to Printer &nbsp;<span class="material-icons">print</span></a>
+                        <a href="/mahasiswa/printpdf" class="btn btn-primary ml-3">Print to PDF &nbsp;<span class="material-icons">print</span></a>
                         @if(session('pesan'))
                         <div class="alert alert-success" role="alert">
                             {{session('pesan')}}
